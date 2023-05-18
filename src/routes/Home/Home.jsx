@@ -6,7 +6,7 @@ export default function Home () {
     const [, setUserAuth] = useOutletContext();
     useEffect(()=>{
         setUserAuth(false);
-    }, [])  
+    }, [])
 
     return (
         <div className='home'>
