@@ -1,0 +1,13 @@
+.message{
+    margin-left:100px;
+    font-size:30px;
+    margin-top:50px;
+    text-align:left;
+    /* font-weight:500; */
+
+}
+.sign-up{
+    text-decoration:none;
+    color:#0F6292;
+    font-weight:bold
+}
