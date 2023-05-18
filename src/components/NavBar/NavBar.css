@@ -4,14 +4,12 @@
     justify-content:space-between;
     padding: 10px 100px;
     align-items:center;
-    /* background-color:#394867; */
     background-color:black;
     margin-bottom:60px;
     position:sticky;
     top:0;
 }
 .works{
-    /* color:rgb(212, 168, 85); */
     color:#1175b0;
     text-decoration:none;
     text-align:center;
@@ -26,7 +24,6 @@
 }
 .login{
     text-decoration:None;
-    /* color:rgb(212, 168, 85); */
     color:white;
     font-size:22px;
     font-weight:bolder;

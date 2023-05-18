@@ -12,6 +12,7 @@
 .quote-wrapper{
     margin-bottom:20px;
 }
+
 .search-form button{
     font-size:20px;
     padding:10px;
@@ -19,9 +20,11 @@
     color:white;
     border:none;
 }
+
 .search-form button:hover{
     cursor:pointer;
 }
+
 .user-wrapper h1{
     text-align:center;
 }
@@ -37,6 +40,7 @@
     margin-left:auto;
     margin-right:auto;
 }
+
 .user-quote{
     border:1px solid black;
     width:200px;
@@ -48,7 +52,6 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    /* background-color:#d6eff7; */
     background-color:#394867;
     border:none;
     font-size:30px;

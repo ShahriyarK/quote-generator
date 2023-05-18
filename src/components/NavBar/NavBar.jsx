@@ -3,7 +3,6 @@ import './NavBar.css';
 export default function NavBar ({userAuth}) {
     const location = useLocation();
     const path = useParams();
-    // const [userAuth, setUserAuth] = useOutletContext();
     return(
         <nav className='navbar'>
            {userAuth?
@@ -11,7 +10,6 @@ export default function NavBar ({userAuth}) {
            <h2><Link className='works' to='/'>Magic Quote<br></br> Generator</Link></h2> }
             {(location.pathname ==='/'||location.pathname ==='/signup') &&
             <span><Link className='login' to='/login'>Log in</Link></span>}
-            {/* {location.pathname.includes('/user') && <span ><Link className='login' to='/'>Log out</Link></span>} */}
             {userAuth && <span><Link className='login' to='/'>Log out</Link></span>}
         </nav>
     )
