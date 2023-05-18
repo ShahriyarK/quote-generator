@@ -1,7 +1,7 @@
 import {Form, redirect} from 'react-router-dom';
 import {useRef} from 'react';
 import './SignUp.css'
-export default function SignUp() {
+const SignUp = () => {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const passwordRef = useRef();
     const handlePassword = function (e) {
@@ -53,3 +53,5 @@ export async function action({request}) {
     localStorage.setItem('users',JSON.stringify(users) )
     return redirect('/login');
 }
+
+export default SignUp

@@ -1,6 +1,6 @@
 import {Link, useLocation, useParams} from 'react-router-dom';
 import './NavBar.css';
-export default function NavBar ({userAuth}) {
+const NavBar = ({userAuth}) => {
     const location = useLocation();
     const path = useParams();
     return(
@@ -14,3 +14,5 @@ export default function NavBar ({userAuth}) {
         </nav>
     )
 }
+
+export default NavBar;

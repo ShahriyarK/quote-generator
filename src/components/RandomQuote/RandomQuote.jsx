@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import './RandomQuote.css';
-export default function Randomquote () { //Convert all functions to arrow functions
+
+const RandomQuote = () => { 
     const [currentIdx, setCurrentIdx] = useState(0);
     const quotes = useLoaderData();
     const quote = quotes[currentIdx];
@@ -20,3 +21,5 @@ export async function loader() {
         const data = await response.json();
         return data;
 }
+
+export default RandomQuote;

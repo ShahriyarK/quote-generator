@@ -1,7 +1,7 @@
 import {Form, redirect, useParams, useNavigate} from 'react-router-dom';
 import './AddQuote.css';
 import {updateUserQuotes} from './AddQuoteUtils';
-export default function AddQuote() {
+const AddQuote = () => {
     const navigate = useNavigate();
     const params = useParams();
 
@@ -35,3 +35,5 @@ export async function action({request, params}) {
     localStorage.setItem('quotes', JSON.stringify(updatedQuotes));
     return redirect(`/user/${params.userId}`);
 }
+
+export default AddQuote;

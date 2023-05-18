@@ -1,8 +1,8 @@
-import Randomquote from '../../components/RandomQuote/RandomQuote';
+import RandomQuote from '../../components/RandomQuote/RandomQuote';
 import {Link, useParams} from 'react-router-dom';
 import {useRef, useState} from 'react';
 import './User.css'
-export default function User() {
+const User = () => {
     const [searchedQuotes, setSearchedQuotes] = useState([]);
     const inputRef = useRef();
     const {userId} = useParams();
@@ -21,7 +21,7 @@ export default function User() {
 
     return (
         <div className='user-wrapper'>
-            <Randomquote />
+            <RandomQuote />
             <form onSubmit={submitHandler} className='search-form'>
                 <input type='text' name='quotes' placeholder='Search your saved quotes' ref={inputRef}></input>
                 <button type='submit'>Search</button>
@@ -41,3 +41,5 @@ export default function User() {
         </div>
     )
 }
+
+export default User;

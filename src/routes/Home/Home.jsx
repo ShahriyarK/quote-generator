@@ -1,8 +1,8 @@
 import {Link, useOutletContext} from 'react-router-dom';
 import './Home.css'
-import Randomquote from '../../components/RandomQuote/RandomQuote';
+import RandomQuote from '../../components/RandomQuote/RandomQuote';
 import { useEffect } from 'react';
-export default function Home () {
+const Home = () => {
     const [, setUserAuth] = useOutletContext();
     useEffect(()=>{
         setUserAuth(false);
@@ -10,7 +10,7 @@ export default function Home () {
 
     return (
         <div className='home'>
-            <Randomquote />
+            <RandomQuote />
             <p className='message'>
                 <span><Link className='sign-up' to='signup'>Sign up</Link></span> and
                 get started by creating your own quotes.
@@ -18,3 +18,5 @@ export default function Home () {
         </div>
     )
 }
+
+export default Home;

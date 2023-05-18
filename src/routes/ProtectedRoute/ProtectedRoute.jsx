@@ -1,6 +1,6 @@
 import {Outlet, useOutletContext, Navigate} from 'react-router-dom';
 
-export default function ProtectedRoute() {
+const ProtectedRoute = () => {
     const [userAuth] = useOutletContext();
 
     return (
@@ -9,3 +9,5 @@ export default function ProtectedRoute() {
         </>
     )
 }
+
+export default ProtectedRoute;

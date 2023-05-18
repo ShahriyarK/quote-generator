@@ -1,7 +1,7 @@
 import {Form, Link, redirect, useOutletContext} from 'react-router-dom';
 import {useRef, useState} from 'react';
 import './Login.css'
-export default function Login() {
+const Login = () => {
     const [, setUserAuth] = useOutletContext();
     const passwordRef = useRef();
     const emailRef = useRef();
@@ -43,3 +43,5 @@ export async function action({request}) {
     }
     return user;
 }
+
+export default Login;
