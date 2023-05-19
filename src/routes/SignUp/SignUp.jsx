@@ -1,6 +1,6 @@
 import { Form, useActionData } from "react-router-dom";
 import "./SignUp.css";
-import {validateUser} from './SignUpUtil';
+import { validateUser } from "./SignUpUtil";
 
 const SignUp = () => {
   const actionData = useActionData();
@@ -16,6 +16,8 @@ const SignUp = () => {
               type="text"
               name="fname"
               required
+              pattern="[A-Za-z]+"
+              title="First name can only contain letters from the alphabet"
               placeholder="Enter your first name"
             ></input>
           </div>
@@ -25,6 +27,8 @@ const SignUp = () => {
               type="text"
               name="lname"
               required
+              pattern="[A-Za-z]+"
+              title="Last name can only contain letters from the alphabet"
               placeholder="Enter your last name"
             ></input>
           </div>
@@ -55,7 +59,7 @@ const SignUp = () => {
         ></input>
         <button type="submit">Sign up</button>
       </Form>
-      {actionData && <p className='signup-error'>{actionData}</p>}
+      {actionData && <p className="signup-error">{actionData}</p>}
     </div>
   );
 };
@@ -65,8 +69,8 @@ export async function action({ request }) {
   const userData = Object.fromEntries(formData);
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const matchedUser = users.find((obj) => obj.email === userData.email);
-    const formAction = validateUser(userData, users, matchedUser, '/login');
-    return formAction;
+  const formAction = validateUser(userData, users, matchedUser, "/login");
+  return formAction;
 }
 
 export default SignUp;

@@ -1,15 +1,13 @@
-export function updateUserQuotes(array, id, content) {
+export function updateUserQuotes(quotesArr, id, userQuote) {
     const newUserQuote = {};
-    const matchingUser = array.find(obj => obj.id === id)
+    const matchingUser = quotesArr.find(obj => obj.id === id)
     if (matchingUser) {
-        matchingUser.quotes.push(content);
-        return array;
+        matchingUser.quotes.push(userQuote);
+        return quotesArr;
     } else {
         newUserQuote.id = id;
-        newUserQuote.quotes = [content];
-        array.push(newUserQuote);
-        return array;
+        newUserQuote.quotes = [userQuote];
+        quotesArr.push(newUserQuote);
+        return quotesArr;
     }
 }
-
-

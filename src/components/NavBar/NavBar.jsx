@@ -8,13 +8,13 @@ const NavBar = ({ userAuth }) => {
     <nav className="navbar">
       {userAuth ? (
         <h2>
-          <Link className="works" to={`/user/${path.userId}`}>
+          <Link className="logo" to={`/user/${path.userId}`}>
             Magic Quote<br></br> Generator
           </Link>
         </h2>
       ) : (
         <h2>
-          <Link className="works" to="/">
+          <Link className="logo" to="/">
             Magic Quote<br></br> Generator
           </Link>
         </h2>
