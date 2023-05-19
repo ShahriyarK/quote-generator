@@ -49,12 +49,41 @@
 
 .signup-page h2 {
   margin-bottom: 30px;
-  font-size: 40px;
+  font-size: 35px;
   text-align:center;
+  color:#6f7278;
 }
 
 .signup-error{
     font-size:20px;
     color:red;
     margin-bottom:10px;
+}
+
+@media screen and (min-width:760px) and (max-width:900px) {
+    .signup-form {
+        width:60%;
+    }
+}
+
+@media screen and (min-width:801px) and (max-width:900px) {
+    .signup-form{
+        width:70%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .signup-form{
+        width:70%;
+        font-size:18px;
+    }
+
+    .signup-form input{
+        font-size:16px;
+    }
+
+    .name-wrap{
+        flex-direction:column;
+        width:100%;
+    }
 }

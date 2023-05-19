@@ -7,7 +7,7 @@ const SignUp = () => {
 
   return (
     <div className="signup-page">
-      <h2>Sign Up</h2>
+      <h2>SIGN UP</h2>
       <Form method="post" className="signup-form">
         <div className="name-wrap">
           <div>
@@ -57,7 +57,7 @@ const SignUp = () => {
           name="confirmPass"
           placeholder="Re-enter your password"
         ></input>
-        <button type="submit">Sign up</button>
+        <button type="submit">sign up</button>
       </Form>
       {actionData && <p className="signup-error">{actionData}</p>}
     </div>

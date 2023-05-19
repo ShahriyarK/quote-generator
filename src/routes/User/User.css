@@ -35,7 +35,7 @@
     column-gap:30px;
     row-gap:30px;
     margin-bottom:20px;
-    max-width:60%;
+    max-width:90%;
     flex-wrap:wrap;
     margin-left:auto;
     margin-right:auto;
@@ -70,12 +70,38 @@
 .user-p{
     font-size:22px;
     margin-bottom:20px;
+    text-align:center;
 }
 
-.user-h1{
+.user-heading{
     margin-bottom:18px;
 }
 
 .no-quote-msg{
     font-size:25px;
+}
+
+@media screen and (max-width:600px) {
+    .search-form input{
+        width:60%;
+        font-size:16px;
+        padding:8px;
+    }
+
+    .search-form button{
+        font-size:18px;
+        padding:8px;
+    }
+
+    .user-quote{
+        min-width:300px;
+        min-height:150px;
+        font-size:20px;
+    }
+
+    .user-heading{
+        font-size:28px;
+    }
+
+
 }

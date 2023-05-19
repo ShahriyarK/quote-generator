@@ -7,7 +7,7 @@ const RandomQuote = () => {
   const quotes = useLoaderData();
   const quote = quotes[currentIdx];
   const error = quotes.message;
-  
+
   return (
     <div className="quote-wrapper">
       <h1>Magic Quotes</h1>

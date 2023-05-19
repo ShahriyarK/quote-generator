@@ -22,14 +22,14 @@ const NavBar = ({ userAuth }) => {
       {(location.pathname === "/" || location.pathname === "/signup") && (
         <span>
           <Link className="login" to="/login">
-            Log in
+            login
           </Link>
         </span>
       )}
       {userAuth && (
         <span>
           <Link className="login" to="/">
-            Log out
+            logout
           </Link>
         </span>
       )}

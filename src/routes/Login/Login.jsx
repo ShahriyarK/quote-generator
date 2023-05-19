@@ -43,7 +43,7 @@ const Login = () => {
           ref={passwordRef}
           placeholder="Enter your password"
         ></input>
-        <button type="submit">Login</button>
+        <button type="submit">login</button>
       </Form>
       <p>
         New to this app?{" "}
