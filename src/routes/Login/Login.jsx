@@ -25,7 +25,7 @@ const Login = () => {
     <div className="form-wrapper">
       <h2>Login to view and create your own quotes.</h2>
       <Form method="post" onSubmit={submitHandler} className="login-form">
-        <label style={{ marginBottom: 15 }}>Email Address</label>
+        <label>Email Address</label>
         <input
           id="email"
           type="email"
@@ -34,7 +34,7 @@ const Login = () => {
           ref={emailRef}
           placeholder="Enter your email"
         ></input>
-        <label style={{ marginBottom: 15 }}>Password</label>
+        <label>Password</label>
         <input
           id="password"
           type="password"
@@ -54,7 +54,9 @@ const Login = () => {
         </span>
       </p>
       {loginError && (
-        <p style={{ color: "red" }}>Incorrect email or password.</p>
+        <p className="login-error">
+          Invalid login credentials. Please double-check your email and password
+        </p>
       )}
     </div>
   );

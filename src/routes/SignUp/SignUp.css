@@ -50,6 +50,7 @@
 .signup-page h2 {
   margin-bottom: 30px;
   font-size: 40px;
+  text-align:center;
 }
 
 .signup-error{

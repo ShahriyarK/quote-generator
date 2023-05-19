@@ -36,6 +36,7 @@ p {
 .login-form label {
   align-self: start;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .login-form button {
@@ -68,4 +69,9 @@ p {
   text-decoration: none;
   color: #0f6292;
   font-weight: bold;
+}
+
+.login-error{
+    color:red;
+    margin-top:10px;
 }

@@ -35,7 +35,7 @@ const User = () => {
         <button type="submit">Search</button>
       </form>
       <h1 className="user-h1">{currentUser.fname}'s Quotes</h1>
-      {!matchedUser && <p style={{ fontSize: 20 }}>No quotes added yet...</p>}
+      {!matchedUser && <p className="no-quote-msg">No quotes added yet...</p>}
       <div className="user-quote-wrap">
         {searchedQuotes.length === 0 &&
           matchedUser &&

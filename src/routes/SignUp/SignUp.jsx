@@ -7,7 +7,7 @@ const SignUp = () => {
 
   return (
     <div className="signup-page">
-      <h2 style={{ textAlign: "center" }}>Sign Up</h2>
+      <h2>Sign Up</h2>
       <Form method="post" className="signup-form">
         <div className="name-wrap">
           <div>
