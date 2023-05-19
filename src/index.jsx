@@ -1,65 +1,65 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Root from './components/Root/Root';
-import Login, {action as loginAction} from './routes/Login/Login';
-import Home from './routes/Home/Home';
-import AddQuote,{action as addQuote} from './routes/AddQuote/AddQuote';
-import SignUp, {action} from './routes/SignUp/SignUp';
-import User from './routes/User/User';
-import ProtectedRoute from './routes/ProtectedRoute/ProtectedRoute';
-import {loader} from './components/RandomQuote/RandomQuote'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Root from "./components/Root/Root";
+import Login, { action as loginAction } from "./routes/Login/Login";
+import Home from "./routes/Home/Home";
+import AddQuote, { action as addQuote } from "./routes/AddQuote/AddQuote";
+import SignUp, { action } from "./routes/SignUp/SignUp";
+import User from "./routes/User/User";
+import ProtectedRoute from "./routes/ProtectedRoute/ProtectedRoute";
+import { loader } from "./components/RandomQuote/RandomQuote";
 import {
   createBrowserRouter,
   RouterProvider,
-  Navigate
-} from 'react-router-dom';
+  Navigate,
+} from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path:'/',
+    path: "/",
     element: <Root />,
-    children:[
+    children: [
       {
-        path:'/',
+        path: "/",
         element: <Home />,
-        loader: loader
+        loader: loader,
       },
       {
-        path:'/',
+        path: "/",
         element: <ProtectedRoute />,
-        children:[
+        children: [
           {
-            path:'/user/:userId',
+            path: "/user/:userId",
             element: <User />,
             loader: loader,
           },
           {
-            path:'/user/:userId/add-quote',
+            path: "/user/:userId/add-quote",
             element: <AddQuote />,
-            action: addQuote
-          }
-        ]
+            action: addQuote,
+          },
+        ],
       },
       {
-        path:'/login',
+        path: "/login",
         element: <Login />,
-        action: loginAction
+        action: loginAction,
       },
       {
-        path:'/Signup',
+        path: "/Signup",
         element: <SignUp />,
-        action: action
+        action: action,
       },
       {
-        path:'*',
-        element:<Navigate to='/login' />
-      }
-    ]
-  }
-])
+        path: "*",
+        element: <Navigate to="/login" />,
+      },
+    ],
+  },
+]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
