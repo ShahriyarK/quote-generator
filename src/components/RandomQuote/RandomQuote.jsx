@@ -1,25 +1,27 @@
-import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import './RandomQuote.css';
+import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import "./RandomQuote.css";
 
-const RandomQuote = () => { 
-    const [currentIdx, setCurrentIdx] = useState(0);
-    const quotes = useLoaderData();
-    const quote = quotes[currentIdx];
-    return (
-        <div className='quote-wrapper'>
-            <h1>Magic Quotes</h1>
-            <p className='quote'>''{quote.text}''</p>
-            <p className='author'>- {quote.author? quote.author : 'Anonymous'}</p>
-            <button onClick={()=> setCurrentIdx((currentIdx+1) % quotes.length)}>Generate Quote</button>
-        </div>
-    )
-}
+const RandomQuote = () => {
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const quotes = useLoaderData();
+  const quote = quotes[currentIdx];
+  return (
+    <div className="quote-wrapper">
+      <h1>Magic Quotes</h1>
+      <p className="quote">''{quote.text}''</p>
+      <p className="author">- {quote.author ? quote.author : "Anonymous"}</p>
+      <button onClick={() => setCurrentIdx((currentIdx + 1) % quotes.length)}>
+        Generate Quote
+      </button>
+    </div>
+  );
+};
 
 export async function loader() {
-        const response = await fetch('https://type.fit/api/quotes');
-        const data = await response.json();
-        return data;
+  const response = await fetch("https://type.fit/api/quotes");
+  const data = await response.json();
+  return data;
 }
 
 export default RandomQuote;

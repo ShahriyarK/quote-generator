@@ -1,25 +1,10 @@
-import { Form, redirect } from "react-router-dom";
-import { useRef } from "react";
+import { Form, useActionData } from "react-router-dom";
 import "./SignUp.css";
+import {validateUser} from './SignUpUtil';
 
 const SignUp = () => {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const passwordRef = useRef();
-  const handlePassword = function (e) {
-    if (e.target.value !== passwordRef.current.value) {
-      e.target.setCustomValidity("Passwords dont match");
-    } else {
-      e.target.setCustomValidity("");
-    }
-  };
-  const handleEmail = function (e) {
-    const matchedUser = users.find((obj) => obj.email === e.target.value);
-    if (matchedUser) {
-      e.target.setCustomValidity("An account by this email already exists");
-    } else {
-      e.target.setCustomValidity("");
-    }
-  };
+  const actionData = useActionData();
+
   return (
     <div className="signup-page">
       <h2 style={{ textAlign: "center" }}>Sign Up</h2>
@@ -48,7 +33,6 @@ const SignUp = () => {
         <input
           type="email"
           name="email"
-          onChange={handleEmail}
           required
           placeholder="Enter your email"
         ></input>
@@ -57,20 +41,21 @@ const SignUp = () => {
           type="password"
           name="password"
           required
-          ref={passwordRef}
           placeholder="Enter your password"
           minLength="8"
+          pattern="(?=.*[A-Z])(?=.*[,!?.@$%^&*#]).*"
+          title="Password must contain atleast one capital letter and one special character"
         ></input>
         <label>Confirm Password</label>
         <input
           type="password"
           required
           name="confirmPass"
-          onChange={handlePassword}
           placeholder="Re-enter your password"
         ></input>
         <button type="submit">Sign up</button>
       </Form>
+      {actionData && <p className='signup-error'>{actionData}</p>}
     </div>
   );
 };
@@ -79,10 +64,9 @@ export async function action({ request }) {
   const formData = await request.formData();
   const userData = Object.fromEntries(formData);
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  userData.id = users.length;
-  users.push(userData);
-  localStorage.setItem("users", JSON.stringify(users));
-  return redirect("/login");
+  const matchedUser = users.find((obj) => obj.email === userData.email);
+    const formAction = validateUser(userData, users, matchedUser, '/login');
+    return formAction;
 }
 
 export default SignUp;

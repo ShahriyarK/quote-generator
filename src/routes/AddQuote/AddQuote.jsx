@@ -1,6 +1,7 @@
 import {Form, redirect, useParams, useNavigate} from 'react-router-dom';
 import './AddQuote.css';
 import {updateUserQuotes} from './AddQuoteUtils';
+
 const AddQuote = () => {
     const navigate = useNavigate();
     const params = useParams();

@@ -5,6 +5,7 @@
   font-size: 20px;
   width: 50%;
   margin: auto;
+  margin-bottom:10px;
 }
 
 .signup-form input {
@@ -29,7 +30,6 @@
   padding: 12px 30px;
   border: none;
   border-radius: 50px;
-  margin-bottom: 16px;
 }
 
 .signup-form button:hover {
@@ -50,4 +50,10 @@
 .signup-page h2 {
   margin-bottom: 30px;
   font-size: 40px;
+}
+
+.signup-error{
+    font-size:20px;
+    color:red;
+    margin-bottom:10px;
 }
