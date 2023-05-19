@@ -6,6 +6,7 @@ const Home = () => {
   const [, setUserAuth] = useOutletContext();
   useEffect(() => {
     setUserAuth(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
