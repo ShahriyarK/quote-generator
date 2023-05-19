@@ -32,3 +32,9 @@
 .quote-wrapper h1{
     margin-bottom:18px;
 }
+
+.fetch-error {
+    color:red;
+    font-size:24px;
+    margin-bottom:16px;
+}
