@@ -16,7 +16,7 @@ const SignUp = () => {
               type="text"
               name="fname"
               required
-              pattern="[A-Za-z]+"
+              pattern="[A-Za-z ]+"
               title="First name can only contain letters from the alphabet"
               placeholder="Enter your first name"
             ></input>
@@ -27,7 +27,7 @@ const SignUp = () => {
               type="text"
               name="lname"
               required
-              pattern="[A-Za-z]+"
+              pattern="[A-Za-z ]+"
               title="Last name can only contain letters from the alphabet"
               placeholder="Enter your last name"
             ></input>
