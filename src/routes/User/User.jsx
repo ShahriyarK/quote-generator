@@ -2,17 +2,16 @@ import RandomQuote from "../../components/RandomQuote/RandomQuote";
 import { Link, useParams } from "react-router-dom";
 import { useRef, useState } from "react";
 import UserQuote from "../../components/UserQuote/UserQuote";
-
+import { accessLocalStorage } from "../../Utilities/LocalStorage";
 import "./User.css";
-
 
 const User = () => {
   const { userId } = useParams();
   const inputRef = useRef();
-  const users = JSON.parse(localStorage.getItem("users"));
+  const users = accessLocalStorage("users", "fetch");
   const currentUser = users[userId];
-  const quotesData =
-    JSON.parse(localStorage.getItem(`${currentUser.fname}_${userId}`)) || [];
+  const key = `${currentUser.fname}_${userId}`;
+  const quotesData = accessLocalStorage(key, "fetch");
   const [quotes, setQuotes] = useState(quotesData);
   const [toggleClear, setToggleClear] = useState(false);
 
@@ -44,7 +43,9 @@ const User = () => {
         {toggleClear && <button onClick={handleClear}>X</button>}
         <button type="submit">Search</button>
       </form>
-      <h1 className="user-heading"><span className='user-name'>{currentUser.fname}'s</span> Quotes</h1>
+      <h1 className="user-heading">
+        <span className="user-name">{currentUser.fname}'s</span> Quotes
+      </h1>
       {quotes.length === 0 && (
         <p className="no-quote-msg">No quotes found...</p>
       )}
@@ -57,7 +58,8 @@ const User = () => {
             quoteId={quote.quoteId}
             content={quote.quote}
             state={quotes}
-            setState={setQuotes}
+            setQuotes={setQuotes}
+            author={quote.author}
           />
         ))}
       </div>

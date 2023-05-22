@@ -1,6 +1,10 @@
 import { Form, useActionData } from "react-router-dom";
 import "./SignUp.css";
 import { validateUser } from "./SignUpUtil";
+import {
+  accessLocalStorage,
+  findFromArray,
+} from "../../Utilities/LocalStorage";
 
 const SignUp = () => {
   const actionData = useActionData();
@@ -67,8 +71,8 @@ const SignUp = () => {
 export async function action({ request }) {
   const formData = await request.formData();
   const userData = Object.fromEntries(formData);
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const matchedUser = users.find((obj) => obj.email === userData.email);
+  const users = accessLocalStorage("users", "fetch");
+  const matchedUser = findFromArray("users", users, "email", userData.email);
   const formAction = validateUser(userData, users, matchedUser, "/login");
   return formAction;
 }

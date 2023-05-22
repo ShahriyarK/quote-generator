@@ -1,6 +1,7 @@
 import { Form, redirect, useParams, useNavigate } from "react-router-dom";
 import "./AddQuote.css";
 import { updateUserQuotes } from "./AddQuoteUtils";
+import {accessLocalStorage, findFromArray} from '../../Utilities/LocalStorage'
 
 const AddQuote = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const AddQuote = () => {
           minLength="10"
           maxLength="110"
         ></textarea>
+        <input placeholder='Who said it? (Optional)' name='author'></input>
         <button type="submit">Save</button>
       </Form>
     </div>
@@ -30,12 +32,13 @@ const AddQuote = () => {
 
 export async function action({ request, params }) {
   const formData = await request.formData();
-  const { quote } = Object.fromEntries(formData);
-  const users = JSON.parse(localStorage.getItem('users'));
-  const matchedUser = users.find((obj) => obj.id === Number(params.userId));
+  const { quote, author } = Object.fromEntries(formData);
+  const id = params.userId;
+  const users = accessLocalStorage('users', 'fetch');
+  const matchedUser = findFromArray('users', users,'id', id);
   const firstName = matchedUser.fname;
-  const updatedQuotes = updateUserQuotes(firstName, params.userId, quote);
-  localStorage.setItem(`${matchedUser.fname}_${params.userId}`, JSON.stringify(updatedQuotes));
+  const updatedQuotes = updateUserQuotes(firstName, params.userId, quote, author);
+  accessLocalStorage(`${firstName}_${id}`, 'save', updatedQuotes);
   return redirect(`/user/${params.userId}`);
 }
 

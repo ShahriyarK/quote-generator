@@ -1,13 +1,13 @@
 import { Form, Link, redirect, useOutletContext } from "react-router-dom";
 import { useRef, useState } from "react";
 import "./Login.css";
-
+import { accessLocalStorage } from "../../Utilities/LocalStorage";
 const Login = () => {
   const [, setUserAuth] = useOutletContext();
   const passwordRef = useRef();
   const emailRef = useRef();
   const [loginError, setLoginError] = useState(false);
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = accessLocalStorage("users", "fetch");
   function submitHandler(e) {
     const matchedUser = users.find(
       (obj) =>
@@ -65,7 +65,7 @@ const Login = () => {
 export async function action({ request }) {
   const formData = await request.formData();
   const user = Object.fromEntries(formData);
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = accessLocalStorage("users", "fetch");
   const matchedUser = users.find(
     (obj) => obj.email === user.email && obj.password === user.password
   );
