@@ -1,26 +1,33 @@
 import RandomQuote from "../../components/RandomQuote/RandomQuote";
 import { Link, useParams } from "react-router-dom";
 import { useRef, useState } from "react";
+import UserQuote from "../../components/UserQuote/UserQuote";
 import "./User.css";
 
 const User = () => {
-  const [searchedQuotes, setSearchedQuotes] = useState([]);
-  const inputRef = useRef();
   const { userId } = useParams();
+  const inputRef = useRef();
   const users = JSON.parse(localStorage.getItem("users"));
   const currentUser = users[userId];
-  const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
-  const matchedUser = quotes.find((obj) => obj.id === userId);
-  function submitHandler(e) {
+  const quotesData =
+    JSON.parse(localStorage.getItem(`${currentUser.fname}_${userId}`)) || [];
+  const [quotes, setQuotes] = useState(quotesData);
+  const [toggleClear, setToggleClear] = useState(false);
+
+  const handleClear = () => {
+    setQuotes([...quotesData]);
+    inputRef.current.value = "";
+    setToggleClear(false);
+  };
+
+  const submitHandler = (e) => {
     e.preventDefault();
-    if (matchedUser) {
-      const userQuotes = matchedUser.quotes;
-      const searched = userQuotes.filter((el) =>
-        el.toLowerCase().includes(inputRef.current.value.toLowerCase())
-      );
-      setSearchedQuotes([...searched]);
-    }
-  }
+    const searched = quotesData.filter((el) =>
+      el.quote.toLowerCase().includes(inputRef.current.value.toLowerCase())
+    );
+    setQuotes([...searched]);
+    setToggleClear(true);
+  };
 
   return (
     <div className="user-wrapper">
@@ -32,26 +39,25 @@ const User = () => {
           placeholder="Search your saved quotes"
           ref={inputRef}
         ></input>
+        {toggleClear && <button onClick={handleClear}>X</button>}
         <button type="submit">Search</button>
       </form>
       <h1 className="user-heading">{currentUser.fname}'s Quotes</h1>
-      {!matchedUser && <p className="no-quote-msg">No quotes added yet...</p>}
+      {quotes.length === 0 && (
+        <p className="no-quote-msg">No quotes found...</p>
+      )}
       <div className="user-quote-wrap">
-        {searchedQuotes.length === 0 &&
-          matchedUser &&
-          matchedUser.quotes.map((el, i) => (
-            <div className="user-quote" key={i}>
-              "{el}"
-            </div>
-          ))}
-      </div>
-      <div className="user-quote-wrap">
-        {searchedQuotes.length > 0 &&
-          searchedQuotes.map((quote, i) => (
-            <div className="user-quote" key={i}>
-              "{quote}"
-            </div>
-          ))}
+        {quotes.map((quote) => (
+          <UserQuote
+            key={quote.quoteId}
+            firstName={currentUser.fname}
+            id={userId}
+            quoteId={quote.quoteId}
+            content={quote.quote}
+            state={quotes}
+            setState={setQuotes}
+          />
+        ))}
       </div>
       <p className="user-p">
         <span>
