@@ -14,7 +14,7 @@ const AddQuote = () => {
       </div>
       <Form method="post">
         <textarea
-          placeholder="Type your quote"
+          placeholder="Enter your quote"
           name="quote"
           required
           spellCheck="true"
@@ -31,13 +31,10 @@ const AddQuote = () => {
 export async function action({ request, params }) {
   const formData = await request.formData();
   const { quote } = Object.fromEntries(formData);
-  // const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
   const users = JSON.parse(localStorage.getItem('users'));
   const matchedUser = users.find((obj) => obj.id === Number(params.userId));
   const firstName = matchedUser.fname;
   const updatedQuotes = updateUserQuotes(firstName, params.userId, quote);
-  // localStorage.setItem("quotes", JSON.stringify(updatedQuotes));
-
   localStorage.setItem(`${matchedUser.fname}_${params.userId}`, JSON.stringify(updatedQuotes));
   return redirect(`/user/${params.userId}`);
 }

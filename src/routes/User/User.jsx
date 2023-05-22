@@ -2,7 +2,9 @@ import RandomQuote from "../../components/RandomQuote/RandomQuote";
 import { Link, useParams } from "react-router-dom";
 import { useRef, useState } from "react";
 import UserQuote from "../../components/UserQuote/UserQuote";
+
 import "./User.css";
+
 
 const User = () => {
   const { userId } = useParams();
@@ -42,7 +44,7 @@ const User = () => {
         {toggleClear && <button onClick={handleClear}>X</button>}
         <button type="submit">Search</button>
       </form>
-      <h1 className="user-heading">{currentUser.fname}'s Quotes</h1>
+      <h1 className="user-heading"><span className='user-name'>{currentUser.fname}'s</span> Quotes</h1>
       {quotes.length === 0 && (
         <p className="no-quote-msg">No quotes found...</p>
       )}

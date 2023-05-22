@@ -7,6 +7,7 @@ import Home from "./routes/Home/Home";
 import AddQuote, { action as addQuote } from "./routes/AddQuote/AddQuote";
 import SignUp, { action } from "./routes/SignUp/SignUp";
 import User from "./routes/User/User";
+import EditQuote, {action as editAction} from "./routes/EditQuote/EditQuote";
 import ProtectedRoute from "./routes/ProtectedRoute/ProtectedRoute";
 import { loader } from "./components/RandomQuote/RandomQuote";
 import {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
             path: "/user/:userId/add-quote",
             element: <AddQuote />,
             action: addQuote,
+          },
+          {
+            path: "/user/:userId/edit-quote/:quoteId",
+            element: <EditQuote />,
+            action: editAction,
           },
         ],
       },

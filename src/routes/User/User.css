@@ -76,7 +76,10 @@
 .user-heading{
     margin-bottom:18px;
 }
-
+.user-heading span{
+    color:#0F6292;
+    font-weight:bolder;
+}
 .no-quote-msg{
     font-size:25px;
 }
