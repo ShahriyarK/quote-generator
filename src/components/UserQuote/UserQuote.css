@@ -1,0 +1,23 @@
+.user-quote{
+    display:flex
+}
+
+.user-quote{
+    border:1px solid black;
+    width:200px;
+    text-align:center;
+    margin-top:auto;
+    min-height:200px;
+    min-width:400px;
+    max-width:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#394867;
+    border:none;
+    font-size:30px;
+    padding:20px;
+    box-sizing:border-box;
+    color:#F1F6F9;
+    overflow:hidden;
+}
