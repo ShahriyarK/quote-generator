@@ -10,7 +10,7 @@ const RandomQuote = () => {
 
   return (
     <div className="quote-wrapper">
-      <h1>Magic Quotes</h1>
+      {/* <h1>Magic Quotes</h1> */}
       {quote && <p className="quote">''{quote.text}''</p>}
       {quote && (
         <p className="author">- {quote.author ? quote.author : "Anonymous"}</p>
