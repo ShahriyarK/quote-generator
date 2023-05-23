@@ -5,7 +5,7 @@ import UserQuote from "../../components/UserQuote/UserQuote";
 import { accessLocalStorage } from "../../Utilities/LocalStorage";
 import "./User.css";
 import searchIcon from "./icons/search-ic.png";
-import closeIcon from './icons/crossed.png';
+import closeIcon from "./icons/crossed.png";
 
 const User = () => {
   const { userId } = useParams();
@@ -43,9 +43,13 @@ const User = () => {
           ref={inputRef}
           required
         ></input>
-        {toggleClear && <button onClick={handleClear}><img src={closeIcon} alt='reset icon' className='search-icon'></img></button>}
+        {toggleClear && (
+          <button onClick={handleClear}>
+            <img src={closeIcon} alt="reset icon" className="search-icon"></img>
+          </button>
+        )}
         <button type="submit">
-          <img src={searchIcon} alt="search icon" className='search-icon'></img>
+          <img src={searchIcon} alt="search icon" className="search-icon"></img>
         </button>
       </form>
       <h1 className="user-heading">

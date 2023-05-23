@@ -71,22 +71,22 @@
   font-weight: bold;
 }
 
-.login-error{
-    color:red;
-    margin-top:10px;
+.login-error {
+  color: red;
+  margin-top: 10px;
 }
 
-@media screen and (max-width:600px) {
-    .login-form input {
-        font-size: 18px;
-        padding: 5px 5px
-      }
+@media screen and (max-width: 600px) {
+  .login-form input {
+    font-size: 18px;
+    padding: 5px 5px;
+  }
 
-    .login-form{
-        width:80%;
-    }
+  .login-form {
+    width: 80%;
+  }
 
-    .form-wrapper h2{
-        font-size:21px;
-    }
+  .form-wrapper h2 {
+    font-size: 21px;
+  }
 }
