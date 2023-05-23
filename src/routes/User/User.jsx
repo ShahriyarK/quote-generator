@@ -4,9 +4,7 @@ import { useRef, useState } from "react";
 import UserQuote from "../../components/UserQuote/UserQuote";
 import { accessLocalStorage } from "../../Utilities/LocalStorage";
 import "./User.css";
-import searchIcon from "./icons/search-ic.png";
-import closeIcon from "./icons/crossed.png";
-
+import SearchForm from "../../components/SearchForm/SearchForm";
 const User = () => {
   const { userId } = useParams();
   const inputRef = useRef();
@@ -35,23 +33,12 @@ const User = () => {
   return (
     <div className="user-wrapper">
       <RandomQuote />
-      <form onSubmit={submitHandler} className="search-form">
-        <input
-          type="text"
-          name="quotes"
-          placeholder="Search your saved quotes"
-          ref={inputRef}
-          required
-        ></input>
-        {toggleClear && (
-          <button onClick={handleClear}>
-            <img src={closeIcon} alt="reset icon" className="search-icon"></img>
-          </button>
-        )}
-        <button type="submit">
-          <img src={searchIcon} alt="search icon" className="search-icon"></img>
-        </button>
-      </form>
+      <SearchForm
+        submitHandler={submitHandler}
+        handleClear={handleClear}
+        inputRef={inputRef}
+        toggleClear={toggleClear}
+      />
       <h1 className="user-heading">
         <span className="user-name">{currentUser.fname}'s</span> Quotes
       </h1>
