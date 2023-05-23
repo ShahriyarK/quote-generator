@@ -5,7 +5,7 @@ import {
   findFromArray,
   findWithIndex,
 } from "../../Utilities/LocalStorage";
-import '../AddQuote/AddQuote.css';
+import "../AddQuote/AddQuote.css";
 
 const EditQuote = () => {
   const params = useParams();

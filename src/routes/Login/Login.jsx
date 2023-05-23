@@ -11,7 +11,11 @@ const Login = () => {
   const users = accessLocalStorage("users", "fetch");
 
   function submitHandler(e) {
-    const matchedUser = matchUserCredentials(users, emailRef.current.value, passwordRef.current.value);
+    const matchedUser = matchUserCredentials(
+      users,
+      emailRef.current.value,
+      passwordRef.current.value
+    );
     if (matchedUser) {
       setUserAuth(true);
     } else {
@@ -51,7 +55,11 @@ const Login = () => {
           </Link>
         </span>
       </p>
-      {loginError && <p className="login-error">Invalid login credentials. Please double-check your email and password</p>}
+      {loginError && (
+        <p className="login-error">
+          Invalid login credentials. Please double-check your email and password
+        </p>
+      )}
     </div>
   );
 };
