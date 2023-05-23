@@ -2,27 +2,27 @@ import { Form, Link, useOutletContext, redirect } from "react-router-dom";
 import { accessLocalStorage } from "../../Utilities/LocalStorage";
 import { matchUserCredentials } from "../../Utilities/LoginUtil";
 import { useRef, useState } from "react";
-import './LoginForm.css';
+import "./LoginForm.css";
 const LoginForm = () => {
-    const [, setUserAuth] = useOutletContext();
-    const passwordRef = useRef();
-    const emailRef = useRef();
-    const [loginError, setLoginError] = useState(false);
-    const users = accessLocalStorage("users", "fetch");
+  const [, setUserAuth] = useOutletContext();
+  const passwordRef = useRef();
+  const emailRef = useRef();
+  const [loginError, setLoginError] = useState(false);
+  const users = accessLocalStorage("users", "fetch");
 
-    function submitHandler(e) {
-        const matchedUser = matchUserCredentials(
-          users,
-          emailRef.current.value,
-          passwordRef.current.value
-        );
-        if (matchedUser) {
-          setUserAuth(true);
-        } else {
-          e.preventDefault();
-          setLoginError(true);
-        }
-      }
+  function submitHandler(e) {
+    const matchedUser = matchUserCredentials(
+      users,
+      emailRef.current.value,
+      passwordRef.current.value
+    );
+    if (matchedUser) {
+      setUserAuth(true);
+    } else {
+      e.preventDefault();
+      setLoginError(true);
+    }
+  }
   return (
     <>
       <h2>Login to view and create your own quotes.</h2>
@@ -66,12 +66,12 @@ const LoginForm = () => {
 export default LoginForm;
 
 export async function action({ request }) {
-    const formData = await request.formData();
-    const { email, password } = Object.fromEntries(formData);
-    const users = accessLocalStorage("users", "fetch");
-    const matchedUser = matchUserCredentials(users, email, password);
-    if (matchedUser) {
-      return redirect(`/user/${matchedUser.id}`);
-    }
-    return matchedUser;
+  const formData = await request.formData();
+  const { email, password } = Object.fromEntries(formData);
+  const users = accessLocalStorage("users", "fetch");
+  const matchedUser = matchUserCredentials(users, email, password);
+  if (matchedUser) {
+    return redirect(`/user/${matchedUser.id}`);
   }
+  return matchedUser;
+}

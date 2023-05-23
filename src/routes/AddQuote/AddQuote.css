@@ -2,36 +2,6 @@
   text-align: center;
 }
 
-/* .quote-form {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin: auto;
-  row-gap: 50px;
-}
-.quote-form button {
-  width: 120px;
-  align-self: center;
-  font-size: 20px;
-  background-color: #2f82b3;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-}
-.quote-form button:hover {
-  background-color: #0f6292;
-  font-weight: bold;
-}
-.quote-form textarea {
-  font-size: 20px;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.quote-form textarea:focus {
-  outline: none;
-  border: 3px solid #0f6292;
-} */
 .form-header-wrap {
   display: flex;
   justify-content: center;
@@ -47,23 +17,17 @@
   font-size: 18px;
   color: white;
 }
+
 .form-header-wrap button:hover {
   font-weight: bold;
   background-color: #0f6292;
 }
+
 .quote-form-link {
   color: white;
   text-decoration: none;
 }
-/* .quote-form input {
-  font-size: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-.quote-form input:focus {
-  outline: none;
-  border: 3px solid #0f6292;
-} */
+
 @media screen and (max-width: 600px) {
   .form-header-wrap h1 {
     font-size: 20px;
@@ -72,14 +36,4 @@
   .form-header-wrap button {
     padding: 5px 5px;
   }
-
-  /* .quote-form {
-    width: 90%;
-  } */
 }
-
-/* @media screen and (min-width: 601px) and (max-width: 1060px) {
-  .quote-form {
-    width: 60%;
-  }
-} */

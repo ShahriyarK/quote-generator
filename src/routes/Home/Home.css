@@ -10,6 +10,7 @@
   color: #0f6292;
   font-weight: bold;
 }
+
 @media screen and (max-width: 600px) {
   .message {
     margin: 0;
