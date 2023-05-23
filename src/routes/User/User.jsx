@@ -5,6 +5,7 @@ import UserQuote from "../../components/UserQuote/UserQuote";
 import { accessLocalStorage } from "../../Utilities/LocalStorage";
 import "./User.css";
 import SearchForm from "../../components/SearchForm/SearchForm";
+
 const User = () => {
   const { userId } = useParams();
   const inputRef = useRef();

@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { accessLocalStorage } from "../../Utilities/LocalStorage";
 import deleteIcon from "./icons/delete-icon.png";
 import pencilIcon from "./icons/pencil.png";
-
 import "./UserQuote.css";
+
 const UserQuote = ({ content, quoteId, id, firstName, setQuotes, author }) => {
   const key = `${firstName}_${id}`;
   const quotes = accessLocalStorage(key, "fetch");

@@ -5,6 +5,7 @@
   margin: auto;
   row-gap: 50px;
 }
+
 .quote-form button {
   width: 120px;
   align-self: center;
@@ -14,16 +15,19 @@
   padding: 8px 15px;
   border: none;
 }
+
 .quote-form button:hover {
   background-color: #0f6292;
   font-weight: bold;
 }
+
 .quote-form textarea {
   font-size: 20px;
   padding: 10px;
   width: 100%;
   box-sizing: border-box;
 }
+
 .quote-form textarea:focus {
   outline: none;
   border: 3px solid #0f6292;

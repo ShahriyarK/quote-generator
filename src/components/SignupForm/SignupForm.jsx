@@ -8,7 +8,6 @@ import "./SignupForm.css";
 
 const SignupForm = () => {
   const message = useActionData();
-
   return (
     <>
       <h2>SIGN UP</h2>

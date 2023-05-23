@@ -5,6 +5,7 @@ import {
 } from "../../Utilities/LocalStorage";
 import { Form, redirect } from "react-router-dom";
 import "../QuoteAddForm/QuoteAddForm.css";
+
 const EditQuoteForm = ({ handleChange, quote, author }) => {
   return (
     <Form method="post" className="quote-form">

@@ -1,6 +1,7 @@
 import searchIcon from "./icons/search-ic.png";
 import closeIcon from "./icons/crossed.png";
 import "./SearchForm.css";
+
 const SearchForm = ({ toggleClear, submitHandler, handleClear, inputRef }) => {
   return (
     <form onSubmit={submitHandler} className="search-form">
