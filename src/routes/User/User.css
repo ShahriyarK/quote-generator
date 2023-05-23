@@ -67,6 +67,7 @@
 }
 .no-quote-msg {
   font-size: 25px;
+  text-align: center;
 }
 .search-icon {
   width: 40px;
@@ -80,6 +81,10 @@
 
   .user-heading {
     font-size: 28px;
+  }
+
+  .no-quote-msg {
+    font-size: 18px;
   }
 }
 

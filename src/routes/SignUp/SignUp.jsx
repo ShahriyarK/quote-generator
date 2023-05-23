@@ -7,7 +7,7 @@ import {
 } from "../../Utilities/LocalStorage";
 
 const SignUp = () => {
-  const actionData = useActionData();
+  const message = useActionData();
 
   return (
     <div className="signup-page">
@@ -63,7 +63,7 @@ const SignUp = () => {
         ></input>
         <button type="submit">sign up</button>
       </Form>
-      {actionData && <p className="signup-error">{actionData}</p>}
+      {message && <p className="signup-error">{message}</p>}
     </div>
   );
 };
