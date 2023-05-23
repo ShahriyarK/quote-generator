@@ -1,19 +1,17 @@
-import { Form, Link, redirect, useOutletContext } from "react-router-dom";
+import { Form, Link, useOutletContext, redirect } from "react-router-dom";
 import { useRef, useState } from "react";
 import "./Login.css";
 import { accessLocalStorage } from "../../Utilities/LocalStorage";
+import { matchUserCredentials } from "./LoginUtil";
 const Login = () => {
   const [, setUserAuth] = useOutletContext();
   const passwordRef = useRef();
   const emailRef = useRef();
   const [loginError, setLoginError] = useState(false);
   const users = accessLocalStorage("users", "fetch");
+
   function submitHandler(e) {
-    const matchedUser = users.find(
-      (obj) =>
-        obj.email === emailRef.current.value &&
-        obj.password === passwordRef.current.value
-    );
+    const matchedUser = matchUserCredentials(users, emailRef.current.value, passwordRef.current.value);
     if (matchedUser) {
       setUserAuth(true);
     } else {
@@ -53,26 +51,20 @@ const Login = () => {
           </Link>
         </span>
       </p>
-      {loginError && (
-        <p className="login-error">
-          Invalid login credentials. Please double-check your email and password
-        </p>
-      )}
+      {loginError && <p className="login-error">Invalid login credentials. Please double-check your email and password</p>}
     </div>
   );
 };
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const user = Object.fromEntries(formData);
+  const { email, password } = Object.fromEntries(formData);
   const users = accessLocalStorage("users", "fetch");
-  const matchedUser = users.find(
-    (obj) => obj.email === user.email && obj.password === user.password
-  );
+  const matchedUser = matchUserCredentials(users, email, password);
   if (matchedUser) {
     return redirect(`/user/${matchedUser.id}`);
   }
-  return user;
+  return matchedUser;
 }
 
 export default Login;
