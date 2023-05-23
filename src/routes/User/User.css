@@ -1,10 +1,13 @@
 .search-form{
     text-align:center;
     margin-bottom:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .search-form input{
-    width:40%;
+    width:50%;
     padding:10px;
     font-size:20px;
 }
@@ -14,15 +17,16 @@
 }
 
 .search-form button{
-    font-size:20px;
-    padding:10px;
     background-color:#0F6292;
     color:white;
-    border:none;
+    border:1px solid #0F6292;
+    fill:white;
+    border-right:0.5px solid white;
 }
 
 .search-form button:hover{
     cursor:pointer;
+    background-color:orange;
 }
 
 .user-wrapper h1{
@@ -32,13 +36,14 @@
 .user-quote-wrap{
     display:flex;
     justify-content:center;
-    column-gap:30px;
-    row-gap:30px;
+    column-gap:80px;
+    row-gap:50px;
     margin-bottom:20px;
     max-width:90%;
     flex-wrap:wrap;
     margin-left:auto;
     margin-right:auto;
+    align-items:stretch;
 }
 
 /* .user-quote{
@@ -74,7 +79,7 @@
 }
 
 .user-heading{
-    margin-bottom:18px;
+    margin-bottom:25px;
 }
 .user-heading span{
     color:#0F6292;
@@ -83,18 +88,21 @@
 .no-quote-msg{
     font-size:25px;
 }
+.search-icon{
+    width:40px;
 
+}
 @media screen and (max-width:600px) {
     .search-form input{
         width:60%;
-        font-size:16px;
-        padding:8px;
+        font-size:15px;
+        padding:12px;
     }
 
-    .search-form button{
+    /* .search-form button{
         font-size:18px;
         padding:8px;
-    }
+    } */
 
     /* .user-quote{
         min-width:300px;
@@ -107,4 +115,11 @@
     }
 
 
+}
+
+@media screen and (max-width:800px){
+    .user-quote-wrap{
+        flex-direction:column;
+        align-items:center;
+    }
 }

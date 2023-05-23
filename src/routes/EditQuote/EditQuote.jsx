@@ -5,6 +5,7 @@ import {
   findFromArray,
   findWithIndex,
 } from "../../Utilities/LocalStorage";
+import '../AddQuote/AddQuote.css';
 
 const EditQuote = () => {
   const params = useParams();
@@ -24,7 +25,7 @@ const EditQuote = () => {
     setQuote({ ...quote, [e.target.name]: e.target.value });
   };
   return (
-    <div className="edit-wrap">
+    <div className="quote-form-wrap">
       <div className="form-header-wrap">
         <button onClick={() => navigate(`/user/${params.userId}`)}>Back</button>
         <h1>Edit Quote</h1>
@@ -36,7 +37,7 @@ const EditQuote = () => {
           spellCheck="true"
           rows="6"
           minLength="10"
-          maxLength="110"
+          maxLength="150"
           value={quote.quote}
           onChange={handleChange}
         ></textarea>

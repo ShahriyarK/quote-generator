@@ -10,7 +10,7 @@
     row-gap:50px;
 }
 .quote-form-wrap form button{
-    width:40%;
+    width:120px;
     align-self:center;
     font-size:20px;
     background-color:#2f82b3;
@@ -21,6 +21,7 @@
 .quote-form-wrap form button:hover{
     background-color:#0F6292;
     font-weight:bold;
+
 }
 .quote-form-wrap form textarea{
     font-size:20px;
@@ -55,7 +56,15 @@
     color:white;
     text-decoration:none;
 }
-
+.quote-form-wrap form input{
+    font-size:20px;
+    padding:10px;
+    box-sizing:border-box;
+}
+.quote-form-wrap form input:focus{
+    outline:none;
+    border:3px solid #0F6292;
+}
 @media screen and (max-width:600px) {
     .form-header-wrap h1{
         font-size:20px;
@@ -75,4 +84,3 @@
         width: 60%;
     }
 }
-

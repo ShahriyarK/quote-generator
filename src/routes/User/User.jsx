@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import UserQuote from "../../components/UserQuote/UserQuote";
 import { accessLocalStorage } from "../../Utilities/LocalStorage";
 import "./User.css";
+import searchIcon from "./icons/search-ic.png";
+import closeIcon from './icons/crossed.png';
 
 const User = () => {
   const { userId } = useParams();
@@ -39,9 +41,12 @@ const User = () => {
           name="quotes"
           placeholder="Search your saved quotes"
           ref={inputRef}
+          required
         ></input>
-        {toggleClear && <button onClick={handleClear}>X</button>}
-        <button type="submit">Search</button>
+        {toggleClear && <button onClick={handleClear}><img src={closeIcon} alt='reset icon' className='search-icon'></img></button>}
+        <button type="submit">
+          <img src={searchIcon} alt="search icon" className='search-icon'></img>
+        </button>
       </form>
       <h1 className="user-heading">
         <span className="user-name">{currentUser.fname}'s</span> Quotes
@@ -69,7 +74,7 @@ const User = () => {
             Add
           </Link>
         </span>{" "}
-        additional quotes.
+        quotes.
       </p>
     </div>
   );

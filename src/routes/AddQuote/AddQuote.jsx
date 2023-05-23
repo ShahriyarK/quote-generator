@@ -13,7 +13,7 @@ const AddQuote = () => {
         <button onClick={() => navigate(`/user/${params.userId}`)}>Back</button>
         <h1>Save your own quotes</h1>
       </div>
-      <Form method="post">
+      <Form method="post" className="quote-form">
         <textarea
           placeholder="Enter your quote"
           name="quote"
@@ -21,7 +21,7 @@ const AddQuote = () => {
           spellCheck="true"
           rows="6"
           minLength="10"
-          maxLength="110"
+          maxLength="150"
         ></textarea>
         <input placeholder='Who said it? (Optional)' name='author'></input>
         <button type="submit">Save</button>
