@@ -11,7 +11,7 @@ export const accessLocalStorage = (key, mode, value) => {
 
 export const findFromArray = (key, array, property, value) => {
   if (key === "users") {
-    const matchingUser = array.find((obj) => obj[property] === Number(value));
+    const matchingUser = array.find((obj) => obj[property] === value);
     return matchingUser;
   }
   const matchingQuotes = array.find((obj) => obj[property] === value);

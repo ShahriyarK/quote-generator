@@ -6,7 +6,7 @@ export const validateUser = (userObj, usersArr, matchedUser, url) => {
   } else if (userObj.password !== userObj.confirmPass) {
     return "Passwords dont match";
   } else {
-    userObj.id = usersArr.length;
+    userObj.id = usersArr.length.toString();
     usersArr.push(userObj);
     localStorage.setItem("users", JSON.stringify(usersArr));
     return redirect(url);
