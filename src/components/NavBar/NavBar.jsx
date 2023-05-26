@@ -6,7 +6,7 @@ const NavBar = ({ userAuth }) => {
   const path = useParams();
   return (
     <nav className="navbar">
-      {userAuth ? (
+      {location.pathname.includes('user') ? (
         <h2>
           <Link className="logo" to={`/user/${path.userId}`}>
             Magic Quote<br></br> Generator
@@ -26,7 +26,7 @@ const NavBar = ({ userAuth }) => {
           </Link>
         </span>
       )}
-      {userAuth && (
+      {location.pathname.includes('user') && (
         <span>
           <Link className="login" to="/">
             logout

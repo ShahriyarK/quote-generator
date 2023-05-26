@@ -2,10 +2,13 @@ import { Link, useOutletContext } from "react-router-dom";
 import "./Home.css";
 import RandomQuote from "../../components/RandomQuote/RandomQuote";
 import { useEffect } from "react";
+import { accessLocalStorage } from "../../Utilities/LocalStorage";
+
 const Home = () => {
   const [, setUserAuth] = useOutletContext();
   useEffect(() => {
     setUserAuth(false);
+    accessLocalStorage('auth-tokken', 'save', null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

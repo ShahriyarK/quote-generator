@@ -72,6 +72,7 @@ export async function action({ request }) {
   const users = accessLocalStorage("users", "fetch");
   const matchedUser = matchUserCredentials(users, email, password);
   if (matchedUser) {
+    accessLocalStorage('auth-tokken', 'save', matchedUser.id);
     return redirect(`/user/${matchedUser.id}`);
   }
   return matchedUser;

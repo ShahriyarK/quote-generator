@@ -1,8 +1,25 @@
-import { Outlet, useOutletContext, Navigate } from "react-router-dom";
+import {
+  Outlet,
+  useOutletContext,
+  Navigate,
+  useParams,
+} from "react-router-dom";
+import { accessLocalStorage } from "../../Utilities/LocalStorage";
 
 const ProtectedRoute = () => {
   const [userAuth] = useOutletContext();
-  return <>{userAuth ? <Outlet /> : <Navigate to="/login" />}</>;
+  const params = useParams();
+  const authTokken = accessLocalStorage("auth-tokken", "fetch");
+  console.log(authTokken, params.userId);
+  return (
+    <>
+      {authTokken === params.userId || userAuth ? (
+        <Outlet />
+      ) : (
+        <Navigate to="/login" />
+      )}
+    </>
+  );
 };
 
 export default ProtectedRoute;
