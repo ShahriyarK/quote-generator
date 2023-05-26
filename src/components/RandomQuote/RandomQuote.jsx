@@ -3,8 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import "./RandomQuote.css";
 
 const RandomQuote = () => {
-  const [currentIdx, setCurrentIdx] = useState(0);
   const quotes = useLoaderData();
+  const [currentIdx, setCurrentIdx] = useState(
+    Math.floor(Math.random() * quotes.length)
+  );
   const quote = quotes[currentIdx];
   const error = quotes.message;
 
@@ -15,7 +17,9 @@ const RandomQuote = () => {
         <p className="author">- {quote.author ? quote.author : "Anonymous"}</p>
       )}
       {error && <p className="fetch-error">Unable to retrieve data</p>}
-      <button onClick={() => setCurrentIdx((currentIdx + 1) % quotes.length)}>
+      <button
+        onClick={() => setCurrentIdx(Math.floor(Math.random() * quotes.length))}
+      >
         Generate Quote
       </button>
     </div>
