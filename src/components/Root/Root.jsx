@@ -6,7 +6,7 @@ const Root = () => {
   const [userAuth, setUserAuth] = useState(false);
   return (
     <>
-      <NavBar userAuth={userAuth} />
+      <NavBar />
       <Outlet context={[userAuth, setUserAuth]} />
     </>
   );

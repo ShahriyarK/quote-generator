@@ -1,7 +1,7 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = ({ userAuth }) => {
+const NavBar = () => {
   const location = useLocation();
   const path = useParams();
   return (
