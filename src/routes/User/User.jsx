@@ -15,6 +15,7 @@ const User = () => {
   const quotesData = accessLocalStorage(key, "fetch");
   const [quotes, setQuotes] = useState(quotesData);
   const [toggleClear, setToggleClear] = useState(false);
+  accessLocalStorage('signup-success', 'save', null);
 
   const handleClear = () => {
     setQuotes([...quotesData]);

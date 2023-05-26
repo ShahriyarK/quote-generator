@@ -9,6 +9,7 @@ const Home = () => {
   useEffect(() => {
     setUserAuth(false);
     accessLocalStorage('auth-tokken', 'save', null);
+    accessLocalStorage('signup-success', 'save', null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

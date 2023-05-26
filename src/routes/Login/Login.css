@@ -17,6 +17,12 @@
   font-size: 20px;
 }
 
+.signup-msg {
+  font-size:18px;
+  color:green;
+  font-weight:bold;
+  margin-top:15px;
+}
 @media screen and (max-width: 600px) {
   .form-wrapper h2 {
     font-size: 21px;

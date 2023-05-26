@@ -1,4 +1,5 @@
 import { redirect } from "react-router-dom";
+import { accessLocalStorage } from "./LocalStorage";
 
 export const validateUser = (userObj, usersArr, matchedUser, url) => {
   if (matchedUser) {
@@ -8,7 +9,12 @@ export const validateUser = (userObj, usersArr, matchedUser, url) => {
   } else {
     userObj.id = usersArr.length.toString();
     usersArr.push(userObj);
-    localStorage.setItem("users", JSON.stringify(usersArr));
+    accessLocalStorage("users", "save", usersArr);
+    accessLocalStorage(
+      "signup-success",
+      "save",
+      "Congratulations, you are successfully signed up. Please enter your credentials to login."
+    );
     return redirect(url);
   }
 };
