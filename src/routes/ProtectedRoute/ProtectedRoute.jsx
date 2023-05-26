@@ -10,7 +10,7 @@ const ProtectedRoute = () => {
   const [userAuth] = useOutletContext();
   const params = useParams();
   const authTokken = accessLocalStorage("auth-tokken", "fetch");
-  console.log(authTokken, params.userId);
+  
   return (
     <>
       {authTokken === params.userId || userAuth ? (
