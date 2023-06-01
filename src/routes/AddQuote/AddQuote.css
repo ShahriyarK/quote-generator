@@ -1,0 +1,39 @@
+.quote-form-wrap {
+  text-align: center;
+}
+
+.form-header-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  column-gap: 1%;
+}
+
+.form-header-wrap button {
+  background-color: #2f82b3;
+  border: none;
+  padding: 8px 15px;
+  font-size: 18px;
+  color: white;
+}
+
+.form-header-wrap button:hover {
+  font-weight: bold;
+  background-color: #0f6292;
+}
+
+.quote-form-link {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .form-header-wrap h1 {
+    font-size: 20px;
+  }
+
+  .form-header-wrap button {
+    padding: 5px 5px;
+  }
+}

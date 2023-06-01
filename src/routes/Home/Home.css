@@ -1,0 +1,29 @@
+.message {
+  margin-left: 100px;
+  font-size: 30px;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #0f6292;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .message {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .message {
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+  }
+}

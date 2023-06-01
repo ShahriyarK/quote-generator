@@ -1,0 +1,30 @@
+.form-wrapper p {
+  text-align: center;
+}
+
+#password {
+  margin-bottom: 20px;
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  margin-bottom: 70px;
+  font-size: 25px;
+  color: #6f7278;
+}
+
+.form-wrapper p {
+  font-size: 20px;
+}
+
+.signup-msg {
+  font-size:18px;
+  color:green;
+  font-weight:bold;
+  margin-top:15px;
+}
+@media screen and (max-width: 600px) {
+  .form-wrapper h2 {
+    font-size: 21px;
+  }
+}

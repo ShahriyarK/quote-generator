@@ -1,0 +1,88 @@
+.quote-wrapper {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 80px;
+  background-color: #d6eff7;
+  background: linear-gradient(to right, #bde9f8, #63c4e4);
+
+  padding: 20px;
+}
+
+.quote {
+  font-size: 30px;
+  margin-bottom: 28px;
+}
+
+.author {
+  text-align: right;
+  font-size: 20px;
+  padding-right: 5%;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.quote-wrapper button {
+  font-size: 22px;
+  background-color: #0f6292;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+}
+
+.quote-wrapper button:hover {
+  cursor: pointer;
+}
+
+.quote-wrapper h1 {
+  margin-bottom: 18px;
+}
+
+.fetch-error {
+  color: red;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .quote {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .quote-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .author {
+    font-size: 18px;
+    margin-bottom: 17px;
+  }
+
+  .quote-wrapper button {
+    font-size: 18px;
+    padding: 8px 8px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .quote {
+    font-size: 25px;
+  }
+
+  .author {
+    font-size: 18px;
+    margin-bottom: 17px;
+  }
+
+  .quote-wrapper button {
+    font-size: 16px;
+    padding: 8px 8px;
+  }
+
+  .quote-wrapper {
+    width: 70%;
+  }
+}

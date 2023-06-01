@@ -1,0 +1,63 @@
+.quote-wrapper {
+  margin-bottom: 20px;
+}
+
+.user-wrapper h1 {
+  text-align: center;
+}
+
+.user-quote-wrap {
+  display: flex;
+  justify-content: center;
+  column-gap: 80px;
+  row-gap: 50px;
+  margin-bottom: 20px;
+  max-width: 90%;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+
+.add-quote {
+  text-decoration: none;
+  color: #0f6292;
+  font-weight: bold;
+}
+
+.user-p {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-heading {
+  margin-bottom: 25px;
+}
+
+.user-heading span {
+  color: #0f6292;
+  font-weight: bolder;
+}
+
+.no-quote-msg {
+  font-size: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .user-heading {
+    font-size: 28px;
+  }
+
+  .no-quote-msg {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .user-quote-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,84 @@
+.user-quote {
+  display: flex;
+}
+
+.user-quote {
+  border: 1px solid black;
+  text-align: center;
+  min-height: 300px;
+  width: 37%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #394867, #6f81a6);
+  background-repeat: no-repeat;
+  border: none;
+  font-size: 25px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  color: #f1f6f9;
+  overflow: hidden;
+  margin-top: 0;
+  box-shadow: 1px 1px 10px 5px #394867;
+}
+
+.btn-wrapper {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 10px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  min-height: 52px;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 18px;
+  padding: 16px 12px;
+  box-sizing: border-box;
+}
+
+.btn-wrapper button {
+  border: none;
+  background-color: white;
+  padding: 5px;
+}
+
+.btn-wrapper button:hover {
+  cursor: pointer;
+  background-color: orange;
+}
+
+.card-author {
+  font-size: 22px;
+  font-style: oblique;
+}
+
+.delete-icon {
+  width: 28px;
+  color: yellow;
+}
+
+@media screen and (max-width: 700px) {
+  .user-quote {
+    width: 80%;
+    font-size: 22px;
+  }
+
+  .card-author {
+    font-size: 18px;
+    font-style: oblique;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 800px) {
+  .user-quote {
+    width: 70%;
+  }
+}
